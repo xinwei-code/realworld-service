@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "6587c450-3263-4f98-93b2-2766233959a2",
+		"name": "New RealWorld",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "用户",
+			"item": [
+				{
+					"name": "用户登录",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "用户注册",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "根据用户名获取用户信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/profiles/22",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profiles",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取当前登录用户",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新用户",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\":{\r\n    \"email\": \"jake@jake.jake\",\r\n    \"bio\": \"I like to play games\",\r\n    \"avatar\": \"https://i.stack.imgur.com/xHWG8.jpg\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "文章",
+			"item": [
+				{
+					"name": "获取文章列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/articles?tag=react",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"articles"
+							],
+							"query": [
+								{
+									"key": "tag",
+									"value": "react"
+								},
+								{
+									"key": "author",
+									"value": "wx2",
+									"disabled": true
+								},
+								{
+									"key": "favorited",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取文章",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/articles/61690e554b969dfe2eb27c52",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"articles",
+								"61690e554b969dfe2eb27c52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "创建文章",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"article\": {\r\n    \"title\": \"react\",\r\n    \"description\": \"reactreact\",\r\n    \"body\": \"Hello world\",\r\n    \"tagList\": [\"vue\", \"react\"],\r\n    \"favorited\": false,\r\n    \"favoritesCount\": 0\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/articles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新文章",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"article\": {\r\n    \"title\": \"Did you train your dragon?\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/articles/6169427629e737950cd10184",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"articles",
+								"6169427629e737950cd10184"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除文章",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "对文章进行点赞",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/articles/6169427629e737950cd10184/favorite",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"articles",
+								"6169427629e737950cd10184",
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取消点赞",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/articles/6169427629e737950cd10184/favorite",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"articles",
+								"6169427629e737950cd10184",
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "根据用户名获取用户信息",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/profiles/wx2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profiles",
+								"wx2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "关注用户",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/profiles/2/follow",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profiles",
+								"2",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取消关注用户",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/profiles/2/follow",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profiles",
+								"2",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tag",
+			"item": [
+				{
+					"name": "获取tag列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tags",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "获取评论",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/articles/616bb5ed825ad0f233b831f5/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"articles",
+								"616bb5ed825ad0f233b831f5",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "添加评论",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"comment\": {\r\n    \"body\": \"this is my blog\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/articles/616bcd421a86725975a88b08/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"articles",
+								"616bcd421a86725975a88b08",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除评论",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/articles/616bcd421a86725975a88b08/comments/616bcd921a86725975a88b1c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"articles",
+								"616bcd421a86725975a88b08",
+								"comments",
+								"616bcd921a86725975a88b1c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY3ZmNmYzdjMDk1ZWI0YjVlMjhjMDYiLCJpYXQiOjE2MzQyMDU2NjksImV4cCI6MTYzNTUwMTY2OX0.EmUXFiqlxD__ZbfTZN7zoqSaWFDpxjaevzs8fTGEBBo",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
